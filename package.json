@@ -1,0 +1,36 @@
+{
+  "name": "skole-nm2025",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "semi": true,
+    "singleQuote": true
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.6.1",
+    "@supabase/supabase-js": "^2.49.4",
+    "bootstrap": "5.3.3",
+    "mysql2": "^3.14.0",
+    "next": "15.2.3",
+    "react": "^19.1.0",
+    "react-bootstrap": "^2.10.9",
+    "react-dom": "^19.1.0",
+    "skole-nm2025": "file:"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@types/node": "^20.17.30",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "eslint": "^9.25.1",
+    "eslint-config-next": "15.2.3",
+    "typescript": "^5.8.3"
+  }
+}
