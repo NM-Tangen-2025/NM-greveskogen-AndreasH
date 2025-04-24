@@ -1,0 +1,23 @@
+.footerContainer {
+  width: 100%;
+  background-color: #f8f9fa;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.socialIcon {
+  transition: transform 0.3s ease;
+}
+
+.socialIcon:hover {
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .footerNav {
+    margin-bottom: 1.5rem;
+  }
+}
