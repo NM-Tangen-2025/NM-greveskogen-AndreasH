@@ -27,7 +27,7 @@ export default function NewsCard({ article }: { article: nyhetsartikler }) {
 
     <div className="card news-card h-100 shadow-sm">
       <img
-        src={placeholderImage}
+        src={article.Bilde.formats.medium?.url || placeholderImage}
         className="card-img-top"
         alt={`Bilde for ${article.Tittel}`}
         style={{ objectFit: 'cover', height: '200px', width: '100%' }}

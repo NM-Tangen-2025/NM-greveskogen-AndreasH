@@ -1,7 +1,7 @@
 export async function getNews() {
   try {
     const response = await fetch(
-      `https://fortunate-bear-715099df12.strapiapp.com/api/Nyhetsartikler`,
+      `https://fortunate-bear-715099df12.strapiapp.com/api/Nyhetsartikler?populate=*`,
       {
         method: 'GET',
         headers: {
@@ -18,7 +18,7 @@ export async function getNews() {
 
     const data = await response.json();
 
-    // console.log('News data:', data); 
+    console.log('Image:', data.data[1].Bilde); 
 
     return { success: true, data };
   } catch (error) {
