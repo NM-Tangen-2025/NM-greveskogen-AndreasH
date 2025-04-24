@@ -1,18 +1,15 @@
-
 import { NextResponse, NextRequest } from 'next/server';
 import { getNewsById } from '@/src/utils/news';
 
 // Correct the function signature for App Router API Route Handlers
 export async function GET(
   req: NextRequest,
-  context: { params: { id: string } } // Keep context object signature
+  { params }: { params: Promise<{ id: string }> }
 ) {
-  console.log("get request received");
+  console.log('get request received');
   try {
     // Await context.params as suggested by the runtime error
-    const resolvedParams = await context.params;
-    const id = resolvedParams.id; // Access id from the resolved params
-    // Removed: const id = context.params.id;
+    const { id } = await params;
     console.log('Id ', id);
     console.log('Getting news article from the source');
     const allProducts = await getNewsById(String(id));
@@ -25,10 +22,12 @@ export async function GET(
       if ('error' in allProducts && responseData.error === 'No database') {
         return NextResponse.json({ error: 'Database error' }, { status: 500 });
       }
-       if ('error' in allProducts && responseData.error === 'Not found') {
-         return NextResponse.json({ error: 'News article not found' }, { status: 404 });
-       }
-
+      if ('error' in allProducts && responseData.error === 'Not found') {
+        return NextResponse.json(
+          { error: 'News article not found' },
+          { status: 404 }
+        );
+      }
 
       // Generic error if success is false but no specific error matched
       return NextResponse.json(
@@ -37,11 +36,9 @@ export async function GET(
       );
     }
 
-
     // console.log("Data being sent to client:", responseData.data);
     // Restore original successful response structure
     return NextResponse.json({ status: 200, data: responseData.data });
-
   } catch (error) {
     console.error('Error processing request for news article ID:', error); // Keep updated log
     return NextResponse.json(
