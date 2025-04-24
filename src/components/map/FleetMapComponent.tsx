@@ -38,7 +38,6 @@ export default function FleetMapComponent({ ships }: FleetMapProps) {
         url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
         attribution='&copy; OpenStreetMap contributors'
       />
-      {/* Map over the ships data received via props */}
       {ships.map((ship) => (
         <Marker key={ship.mmsi} position={[ship.latitude, ship.longitude]}>
           <Popup>
