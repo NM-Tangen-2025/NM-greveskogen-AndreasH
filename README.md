@@ -2,6 +2,16 @@
 
 ## Getting Started
 
+I recommend using pnpm as it is the package manager i am using
+
+First, install all packages:
+
+```bash
+pnpm install
+# or
+npm install
+```
+
 First, run the development server:
 
 ```bash
