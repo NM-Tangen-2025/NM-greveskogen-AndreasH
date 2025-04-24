@@ -5,12 +5,12 @@ import { getNewsById } from '@/src/utils/news';
 // Correct the function signature for App Router API Route Handlers
 export async function GET(
   req: NextRequest,
-  context: { params: { id: string } } // Use context object containing params
+  { params }: { params: { id: string } }
 ) {
   console.log("get request received");
   try {
-    // Access id directly from context.params
-    const id = context.params.id;
+        const resolvedParams = await params;
+    const id = resolvedParams.id;
     console.log('Id ', id);
     console.log('Getting news article from the source'); // Keep updated log message
     const allProducts = await getNewsById(String(id)); // Restore original variable name
@@ -36,7 +36,7 @@ export async function GET(
     }
 
 
-    console.log("Data being sent to client:", responseData.data);
+    // console.log("Data being sent to client:", responseData.data);
     // Restore original successful response structure
     return NextResponse.json({ status: 200, data: responseData.data });
 
