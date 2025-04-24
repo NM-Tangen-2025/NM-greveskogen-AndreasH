@@ -94,10 +94,6 @@ interface FooterProps {
  *     </>
  *   );
  * }
- * ```
- * 
- * All props are optional and have default values.
- * The component automatically handles mobile responsiveness.
  */
 export default function Footer({
   logo = {
@@ -111,23 +107,13 @@ export default function Footer({
     {
       title: 'Quick Links',
       links: [
-        { name: 'Home', path: '/' },
-        { name: 'News', path: '/news' },
-        { name: 'Products', path: '/products' },
-        { name: 'About', path: '/about' },
-        { name: 'Contact', path: '/contact' },
+        { name: 'Info', path: '/om' },
+        { name: 'Nyheter', path: '/nyheter' },
+        { name: 'Skip', path: '/skip' },
+        { name: 'Kart', path: '/map' },
+        { name: 'Program', path: '/program' },
       ],
-    },
-    {
-      title: 'Products',
-      links: [
-        { name: 'Featured', path: '/products/featured' },
-        { name: 'New Arrivals', path: '/products/new' },
-        { name: 'Best Sellers', path: '/products/best-sellers' },
-        { name: 'Discounts', path: '/products/discounts' },
-      ],
-    },
-  ],
+    },  ],
   contactInfo = {
     email: 'Marianne.Osmundsen.Tronstad@kristiansand.kommune.no',
     phone: '+47 380 75 000',
