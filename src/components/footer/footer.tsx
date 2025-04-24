@@ -102,7 +102,7 @@ export default function Footer({
     width: 150,
     height: 60,
   },
-  companyName = 'Apinor',
+  companyName = 'Kristiansand Kommune',
   navigationLinks = [
     {
       title: 'Nyttige lenker',
@@ -224,14 +224,6 @@ export default function Footer({
             <p className="text-muted mb-0">{copyright}</p>
           </div>
           <div className="col-md-6 text-center text-md-end">
-            <p className="text-muted mb-0">
-              <Link href="/privacy" className="text-decoration-none text-muted me-3">
-                Privacy Policy
-              </Link>
-              <Link href="/terms" className="text-decoration-none text-muted">
-                Terms of Service
-              </Link>
-            </p>
           </div>
         </div>
       </div>
