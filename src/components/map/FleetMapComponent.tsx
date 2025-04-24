@@ -6,30 +6,50 @@ import type { LatLngExpression } from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import 'leaflet-defaulticon-compatibility'
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css'
+import type { CombinedShipData } from '@/app/map/page'; // Import the combined type
 
-type Ship = { id: string; pos: LatLngExpression }
+// Define props for the component
+interface FleetMapProps {
+  ships: CombinedShipData[];
+}
 
-const ships: Ship[] = [
-  { id: 'AURORA',  pos: [59.92, 10.76] },
-  { id: 'POLARIS', pos: [59.915, 10.80] },
-  { id: 'ORION',   pos: [59.90, 10.72] },
-]
+// Accept props
+export default function FleetMapComponent({ ships }: FleetMapProps) {
+  // Default center and zoom, adjust as needed
+  const defaultCenter: LatLngExpression = [59.91, 10.75];
+  const defaultZoom = 16; 
 
-export default function FleetMapComponent() { // Renamed component
+  // Calculate center based on ships if available, otherwise use default
+  const mapCenter = ships.length > 0
+    ? [
+        ships.reduce((sum, ship) => sum + ship.latitude, 0) / ships.length,
+        ships.reduce((sum, ship) => sum + ship.longitude, 0) / ships.length,
+      ] as LatLngExpression
+    : defaultCenter;
+
   return (
     <MapContainer
-      center={[59.91, 10.75]}
-      zoom={12}
+      center={mapCenter} // Use calculated or default center
+      zoom={defaultZoom} // Use default zoom
       style={{ height: '100vh', width: '100%' }}
-      scrollWheelZoom={false} // Consider setting to true for better usability
+      scrollWheelZoom={true} // Enabled scroll wheel zoom
     >
       <TileLayer
         url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
         attribution='&copy; OpenStreetMap contributors'
       />
-      {ships.map(({ id, pos }) => (
-        <Marker key={id} position={pos}>
-          <Popup>{id}</Popup>
+      {/* Map over the ships data received via props */}
+      {ships.map((ship) => (
+        // Use mmsi as key, ensure latitude and longitude are numbers
+        <Marker key={ship.mmsi} position={[ship.latitude, ship.longitude]}>
+          {/* Display ship name and other details in the popup */}
+          <Popup>
+            <b>{ship.shipname}</b><br />
+            Type: {ship.vesselType || 'N/A'}<br />
+            Call Sign: {ship.callSign || 'N/A'}<br />
+            Course: {ship.course}°<br />
+            Time: {new Date(ship.msgtime).toLocaleString()}
+          </Popup>
         </Marker>
       ))}
     </MapContainer>

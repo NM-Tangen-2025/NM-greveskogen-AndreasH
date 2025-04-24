@@ -1,6 +1,6 @@
 export interface ais {
     latitude: number;
-    longtidude: number;
+    longitude: number; // Corrected typo: longtidude -> longitude
     course: number;
     mmsi: number;
     msgtime: string;
