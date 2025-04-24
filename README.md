@@ -14,7 +14,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## .env file structure
 
-The **.env** file located in the root directory should have these variables defined like this:
+The **.env** file located in the root directory should have these variables defined like this, most of these are not used in this repo as of yet - unused env variables will be removed from this document before the task is over
 
 ### Database
 
@@ -39,7 +39,6 @@ SUPABASE_SECRET_KEY=
 ```ts
 INT_API_KEY=
 ```
-
 
 ### Full env file can be copied from here
 
