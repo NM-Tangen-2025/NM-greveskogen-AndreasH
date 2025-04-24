@@ -41,7 +41,7 @@ export default function NewsArticle({
   // Only use the proxy if an original URL exists, otherwise use placeholder
   const imageUrl = originalImageUrl
     ? `/api/image-proxy?url=${encodeURIComponent(originalImageUrl)}`
-    : null; // Set to null if no original image URL is found
+    : '/images/placeholder.jpg';
   // --- EDIT END ---
 
   const imageAlt = `Bilde for ${Tittel}`;
@@ -72,14 +72,14 @@ export default function NewsArticle({
         <div className="col-12">
           <div className="position-relative featured-image-container">
             <Image
-              src={imageUrl} // Use the corrected proxy URL or placeholder
+              src={imageUrl} 
               alt={imageAlt}
               className="featured-image rounded"
-              width={1200} // Adjust dimensions as needed
+              width={1200}
               height={675}
-              layout="responsive" // Makes image scale with container
-              objectFit="cover" // Cover the area
-              priority // Prioritize loading for main image
+              layout="responsive"
+              objectFit="cover"
+              priority
             />
           </div>
         </div>
