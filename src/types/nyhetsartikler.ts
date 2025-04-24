@@ -1,9 +1,9 @@
 export default interface nyhetsartikler {
   id: number;
   ducomentId: string;
-  tittel: string;
-  ingress: string;
-  innhold: string;
-  dato: string;
+  Tittel: string;
+  Ingress: string;
+  Innhold: string;
+  Dato: string;
   bilde: string;
 }
