@@ -1,6 +1,6 @@
 export default interface nyhetsartikler {
   id: number;
-  ducomentId: string;
+  documentId: string;
   Tittel: string;
   Ingress: string;
   Innhold: string;

@@ -18,7 +18,7 @@ export async function getNews() {
 
     const data = await response.json();
 
-    console.log('Image:', data.data[1].Bilde); 
+    console.log('Image:', data.data[1]); 
 
     return { success: true, data };
   } catch (error) {
