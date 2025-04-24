@@ -34,7 +34,6 @@ export default function RootLayout({
   const navItems = [
     { name: 'Info', path: '/om', icon: <FaHome /> },
     { name: 'Nyheter', path: '/nyheter', icon: <FaNewspaper /> },
-    // Use ship icon for skip
     { name: 'Skip', path: '/skip', icon: <FaShip /> },
     { name: 'Program', path: '/program', icon: <FaInfoCircle /> },
   ];
