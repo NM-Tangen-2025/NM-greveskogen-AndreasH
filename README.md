@@ -1,5 +1,7 @@
 # This is a [Next.js](https://nextjs.org) project template made with [Bootstrap](https://getbootstrap.com/) and mysql2
 
+This page can be viewed at [Vercel](https://tall-ship-races.vercel.app/)
+
 ## Getting Started
 
 I recommend using pnpm as it is the package manager i am using
