@@ -17,6 +17,8 @@ export async function GET() {
         { status: 500 }
       );
     }
+
+    console.log('Response data from Strapi:', responseData.data);
     
     return NextResponse.json({ status: 200, data: responseData.data });
   } catch (error) {
