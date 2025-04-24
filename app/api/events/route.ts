@@ -21,7 +21,7 @@ export async function GET() {
 
     // console.log('Response data from Strapi:', responseData.data);
     
-    return NextResponse.json({ status: 200, data: responseData.data });
+    return NextResponse.json({ status: 200, data: responseData.data.data });
   } catch (error) {
     console.error('Error from Getting events', error);
     return NextResponse.json(
