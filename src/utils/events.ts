@@ -18,7 +18,7 @@ export async function getEvents() {
 
     const data = await response.json();
 
-    console.log('Arrangementer: ', data); 
+    // console.log('Arrangementer: ', data); 
 
     return { success: true, data };
   } catch (error) {
