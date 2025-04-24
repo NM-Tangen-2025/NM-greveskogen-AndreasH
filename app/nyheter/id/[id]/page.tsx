@@ -9,10 +9,6 @@ import NewsArticle from '@/src/components/news/newsArticle';
 import nyhetsartikler from '@/src/types/nyhetsartikler';
 import Link from 'next/link';
 
-// Remove the old mock data and interface
-// interface newsData { ... }
-// const newsItems = [ ... ];
-
 export default function Page() {
   // State for the fetched article, loading status, and errors
   const [article, setArticle] = useState<nyhetsartikler | null>(null);
@@ -115,7 +111,6 @@ export default function Page() {
     return <NewsArticle article={article} />;
   }
 
-  // Fallback if no article, no error, and not loading (should ideally not be reached if error handling is correct)
   return (
       <Container className="mt-5 text-center">
           <p>Article could not be loaded.</p>
