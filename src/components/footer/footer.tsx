@@ -129,15 +129,15 @@ export default function Footer({
     },
   ],
   contactInfo = {
-    email: 'info@apinor.com',
-    phone: '+47 123 45 678',
-    address: 'Apinor Street 123, Oslo, Norway',
+    email: 'Marianne.Osmundsen.Tronstad@kristiansand.kommune.no',
+    phone: '+47 380 75 000',
+    address: 'Kristiansand, Norge',
   },
   socialLinks = {
-    facebook: 'https://facebook.com',
-    twitter: 'https://twitter.com',
-    instagram: 'https://instagram.com',
-    linkedin: 'https://linkedin.com',
+    facebook: 'https://www.facebook.com/thetallshipsraces/',
+    twitter: 'https://x.com/TallShipsRaces',
+    instagram: 'https://www.instagram.com/tallshipsraces/?hl=no',
+    linkedin: 'https://www.linkedin.com/company/tall-ships-races-international-limited/?originalSubdomain=uk',
   },
   copyright = `© ${new Date().getFullYear()} ${companyName}. All rights reserved.`,
 }: FooterProps) {
