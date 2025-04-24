@@ -7,8 +7,7 @@ import {
   FaNewspaper,
   FaHome,
   FaInfoCircle,
-  FaEnvelope,
-  FaShoppingBag,
+  FaShip,
 } from 'react-icons/fa';
 
 const geistSans = Geist({
@@ -33,11 +32,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const navItems = [
-    { name: 'Home', path: '/', icon: <FaHome /> },
-    { name: 'News', path: '/news', icon: <FaNewspaper /> },
-    { name: 'Products', path: '/products', icon: <FaShoppingBag /> },
-    { name: 'About', path: '/about', icon: <FaInfoCircle /> },
-    { name: 'Contact', path: '/contact', icon: <FaEnvelope /> },
+    { name: 'Info', path: '/om', icon: <FaHome /> },
+    { name: 'Nyheter', path: '/nyheter', icon: <FaNewspaper /> },
+    // Use ship icon for skip
+    { name: 'Skip', path: '/skip', icon: <FaShip /> },
+    { name: 'Program', path: '/program', icon: <FaInfoCircle /> },
   ];
 
   return (
