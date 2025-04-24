@@ -44,7 +44,7 @@ export default function FleetMapComponent({ ships }: FleetMapProps) {
         <Marker key={ship.mmsi} position={[ship.latitude, ship.longitude]}>
           {/* Display ship name and other details in the popup */}
           <Popup>
-            <b>{ship.shipname}</b><br />
+            <b>{ship.shipName}</b><br />
             Type: {ship.vesselType || 'N/A'}<br />
             Call Sign: {ship.callSign || 'N/A'}<br />
             Course: {ship.course}°<br />

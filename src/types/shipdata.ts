@@ -8,7 +8,7 @@ export interface ais {
 
 export interface ship {
     mmsi: number;
-    shipname: string;
+    shipName: string; // Changed from shipname to shipName
     callSign: string;
     vesselType: string;
 }
