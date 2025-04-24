@@ -40,10 +40,15 @@ export default function FleetMapComponent({ ships }: FleetMapProps) {
       />
       {/* Map over the ships data received via props */}
       {ships.map((ship) => (
-        // Use mmsi as key, ensure latitude and longitude are numbers
         <Marker key={ship.mmsi} position={[ship.latitude, ship.longitude]}>
-          {/* Display ship name and other details in the popup */}
           <Popup>
+
+            <img
+              src={`https://api.skolenm.tanvgs.no/ships/${ship.mmsi}/image`}
+              alt={`Image of ${ship.shipName || 'ship'}`}
+              width="150" 
+              style={{ display: 'block', marginBottom: '5px' }} 
+            />
             <b>{ship.shipName}</b><br />
             Type: {ship.vesselType || 'N/A'}<br />
             Call Sign: {ship.callSign || 'N/A'}<br />
