@@ -17,10 +17,15 @@ interface NewsArticleProps {
 export default function NewsArticle({
   article /*, relatedArticles = [] */,
 }: NewsArticleProps) {
-  // Destructure directly from article, assuming no 'attributes' nesting based on your type
+  // Destructure from article.data, not directly from article
   const { Tittel, Ingress, Innhold, Dato, Bilde /*, author */ } = article;
 
-  // Format the published date using Dato field
+  console.log('Article data:', article); // Debugging line
+
+  // Use the destructured Dato directly
+  console.log("Dato: ", Dato)
+
+  // Format the published date using the destructured Dato
   const timeAgo = formatDistanceToNow(new Date(Dato), {
     addSuffix: true,
     locale: nb,
@@ -30,20 +35,19 @@ export default function NewsArticle({
     locale: nb,
   });
 
+  // Use the destructured Bilde directly
   const originalImageUrl =
-    Bilde?.formats?.medium?.url || // Prefer medium
-    Bilde?.formats?.small?.url || // Fallback small
-    Bilde?.formats?.thumbnail?.url; // Fallback thumbnail (or Bilde?.url if original is stored there)
+    Bilde?.formats?.medium?.url ||
+    Bilde?.formats?.small?.url ||
+    Bilde?.formats?.thumbnail?.url;
 
-    console.log("originalImageUrl: ",  Bilde); // Debugging line
 
   // Construct the URL for the Next.js image proxy route using ternary operator
-  // Only use the proxy if an original URL exists, otherwise use placeholder
   const imageUrl = originalImageUrl
     ? `/api/image-proxy?url=${encodeURIComponent(originalImageUrl)}`
     : '/images/placeholder.jpg';
-  // --- EDIT END ---
 
+  // Use the destructured Tittel directly
   const imageAlt = `Bilde for ${Tittel}`;
 
   return (
@@ -59,6 +63,7 @@ export default function NewsArticle({
       {/* Article header */}
       <div className="row mb-4">
         <div className="col-12">
+          {/* Use the destructured Tittel directly */}
           <h1 className="article-title">{Tittel}</h1>
           <div className="d-flex flex-wrap align-items-center text-muted mb-3">
             <div className="me-3">{formattedDate}</div>
@@ -72,7 +77,7 @@ export default function NewsArticle({
         <div className="col-12">
           <div className="position-relative featured-image-container">
             <Image
-              src={imageUrl} 
+              src={imageUrl}
               alt={imageAlt}
               className="featured-image rounded"
               width={1200}
@@ -89,6 +94,7 @@ export default function NewsArticle({
       <div className="row mb-4">
         <div className="col-12">
           <div className="article-description p-3 bg-light rounded">
+            {/* Use the destructured Ingress directly */}
             <p className="lead mb-0">{Ingress}</p>
           </div>
         </div>
@@ -98,7 +104,7 @@ export default function NewsArticle({
       <div className="row mb-5">
         <div className="col-lg-12">
           <div className="article-content">
-            {Innhold.split('\n').map((paragraph, index) => (
+            {Innhold.split('\n').map((paragraph: string, index: number) => (
               <p key={index}>{paragraph}</p>
             ))}
           </div>
