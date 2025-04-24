@@ -5,6 +5,7 @@ import { useMemo, useState, useEffect } from 'react';
 import type { ais, ship } from '@/src/types/shipdata';
 import TeaserCard from '@/src/components/map/TeaserCard';
 import Link from 'next/link';
+import Image from 'next/image'; // Import the next/image component
 
 export type CombinedShipData = ais & Omit<ship, 'mmsi'>;
 
@@ -67,23 +68,42 @@ export default function Home() {
 
   return (
     <main>
-      {/* Hero Section */}
-      <div className="container-fluid bg-primary text-white text-center p-5 mb-4">
-        <h1 className="display-4 fw-bold">
-          Tall Ships Races Kristiansand 2025
-        </h1>
-        <p className="lead">
-          Opplev den storslåtte finalen av The Tall Ships Races! <br />
-          Kristiansand Havn | 30. juli – 2. august 2025
-        </p>
-        <p>Gratis folkefest for hele familien!</p>
-        <Link href="/om" className="btn btn-light btn-lg mt-3">
-          Lær Mer Om Arrangementet
-        </Link>
+      {/* Hero Section - Updated with Image Background */}
+      {/* Removed bg-primary, added inline style for background image */}
+      <div
+        className="container-fluid text-white text-center p-5 mb-4 position-relative"
+        style={{
+          backgroundImage: `url('/image3.jpg')`, // Use image3 as background
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          minHeight: '400px', // Adjust height as needed
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}
+      >
+        {/* Added overlay for text readability */}
+        <div
+          className="position-absolute top-0 start-0 w-100 h-100"
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }} // Semi-transparent black overlay
+        ></div>
+        {/* Content needs to be relative to be above the overlay */}
+        <div className="position-relative">
+          <h1 className="display-4 fw-bold">Tall Ships Races Kristiansand 2025</h1>
+          <p className="lead">
+            Opplev den storslåtte finalen av The Tall Ships Races! <br />
+            Kristiansand Havn | 30. juli – 2. august 2025
+          </p>
+          <p>Gratis folkefest for hele familien!</p>
+          <Link href="/om" className="btn btn-light btn-lg mt-3">
+            Lær Mer Om Arrangementet
+          </Link>
+        </div>
       </div>
 
       <div className="container">
-        {/* Introduction */}
+        {/* Introduction - Remains the same */}
         <div className="row mb-5 text-center">
           <div className="col">
             <h2>Velkommen til Sørlandets Seilfest!</h2>
@@ -125,7 +145,7 @@ export default function Home() {
           />
         </div>
 
-        {/* More Info Callout */}
+        {/* More Info Callout - Remains the same */}
         <div className="row mb-5 text-center">
           <div className="col">
             <h3>Vil du vite mer?</h3>
@@ -134,7 +154,7 @@ export default function Home() {
               praktiske detaljer, Cruise-in-Company og mye mer på vår Om-side.
             </p>
             <Link href="/om" className="btn btn-secondary">
-              Utforsk Om Oss
+              Finn mer informasjon her!
             </Link>
           </div>
         </div>
