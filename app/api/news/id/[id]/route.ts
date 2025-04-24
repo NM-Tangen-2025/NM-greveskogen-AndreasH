@@ -5,22 +5,24 @@ import { getNewsById } from '@/src/utils/news';
 // Correct the function signature for App Router API Route Handlers
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: { id: string } } // Keep context object signature
 ) {
   console.log("get request received");
   try {
-        const resolvedParams = await params;
-    const id = resolvedParams.id;
+    // Await context.params as suggested by the runtime error
+    const resolvedParams = await context.params;
+    const id = resolvedParams.id; // Access id from the resolved params
+    // Removed: const id = context.params.id;
     console.log('Id ', id);
-    console.log('Getting news article from the source'); // Keep updated log message
-    const allProducts = await getNewsById(String(id)); // Restore original variable name
-    const responseData = allProducts; // Restore original responseData variable
+    console.log('Getting news article from the source');
+    const allProducts = await getNewsById(String(id));
+    const responseData = allProducts;
 
-    // console.log('News article from source:', responseData.data); // Use responseData
+    // console.log('News article from source:', responseData.data);
 
     if (allProducts.success == false) {
       // console.log('Fetch status === failed');
-      if ('error' in allProducts && responseData.error === 'No database') { 
+      if ('error' in allProducts && responseData.error === 'No database') {
         return NextResponse.json({ error: 'Database error' }, { status: 500 });
       }
        if ('error' in allProducts && responseData.error === 'Not found') {
