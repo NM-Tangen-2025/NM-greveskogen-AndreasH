@@ -105,7 +105,7 @@ export default function Footer({
   companyName = 'Apinor',
   navigationLinks = [
     {
-      title: 'Quick Links',
+      title: 'Nyttige lenker',
       links: [
         { name: 'Info', path: '/om' },
         { name: 'Nyheter', path: '/nyheter' },
@@ -187,13 +187,13 @@ export default function Footer({
 
           {/* Contact Info */}
           <div className="col-lg-4 col-md-6 mb-4">
-            <h5 className="mb-3">Contact Us</h5>
+            <h5 className="mb-3">Kontakt oss</h5>
             <ul className="list-unstyled">
               {contactInfo.email && (
                 <li className="mb-2 d-flex align-items-center">
                   <FaEnvelope className="me-2 text-primary" />
                   <a href={`mailto:${contactInfo.email}`} className="text-decoration-none text-muted">
-                    Kontakt oss
+                    E-post
                   </a>
                 </li>
               )}
