@@ -7,6 +7,7 @@ import 'leaflet/dist/leaflet.css'
 import 'leaflet-defaulticon-compatibility'
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css'
 import type { CombinedShipData } from '@/app/map/page'; // Import the combined type
+import Image from 'next/image'; // Import the Next.js Image component
 
 // Define props for the component
 interface FleetMapProps {
@@ -41,13 +42,16 @@ export default function FleetMapComponent({ ships }: FleetMapProps) {
       {ships.map((ship) => (
         <Marker key={ship.mmsi} position={[ship.latitude, ship.longitude]}>
           <Popup>
-
-            <img
-              src={`https://api.skolenm.tanvgs.no/ships/${ship.mmsi}/image`}
-              alt={`Image of ${ship.shipName || 'ship'}`}
-              width="150" 
-              style={{ display: 'block', marginBottom: '5px' }} 
-            />
+            <div style={{ width: '150px', height: 'auto', marginBottom: '5px' }}> 
+              <Image
+                src={`https://api.skolenm.tanvgs.no/ships/${ship.mmsi}/image`}
+                alt={`Image of ${ship.shipName || 'ship'}`}
+                width={150} 
+                height={100}
+                style={{ display: 'block', height: 'auto', width: '100%' }} 
+                unoptimized 
+              />
+            </div>
             <b>{ship.shipName}</b><br />
             Type: {ship.vesselType || 'N/A'}<br />
             Call Sign: {ship.callSign || 'N/A'}<br />
