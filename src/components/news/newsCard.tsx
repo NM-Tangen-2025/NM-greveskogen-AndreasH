@@ -39,7 +39,7 @@ export default function NewsCard({ article }: { article: nyhetsartikler }) {
           <small className="text-muted">Publisert for {timeAgo} siden den {formattedDate}</small>
         </p>
         <Link
-          href={`/nyheter/${article.id}`}
+          href={`/nyheter/id/${article.documentId}`}
           className="btn btn-outline-primary mt-auto align-self-start"
         >
           Les mer
