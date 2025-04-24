@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
-  FaShoppingCart,
   FaNewspaper,
   FaHome,
   FaInfoCircle,
@@ -82,16 +81,12 @@ export default function Navbar({
     width: 204,
     height: 81,
   },
-  brandName,
   items = [
     { name: 'Home', path: '/', icon: <FaHome /> },
     { name: 'News', path: '/news', icon: <FaNewspaper /> },
     { name: 'About', path: '/about', icon: <FaInfoCircle /> },
     { name: 'Contact', path: '/contact', icon: <FaEnvelope /> },
   ],
-  showCart = true,
-  showBanner = true,
-  bannerImage = '/images/ApinorBanner.jpg',
 }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);

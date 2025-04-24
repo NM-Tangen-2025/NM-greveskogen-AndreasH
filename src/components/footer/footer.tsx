@@ -12,7 +12,6 @@ import {
   FaPhone,
   FaMapMarkerAlt
 } from 'react-icons/fa';
-import styles from './Footer.module.css';
 
 interface FooterProps {
   logo?: {
