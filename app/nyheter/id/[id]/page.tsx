@@ -37,9 +37,11 @@ export default function Page() {
     setError(null);
 
     try {
-      // Construct the API URL for a single article - REMOVE the colon before ${validId}
-      // Also add ?populate=* to get related fields like images
-      const apiUrl = `https://fortunate-bear-715099df12.strapiapp.com/api/Nyhetsartikler/${validId}`;
+      // --- EDIT START ---
+      // Construct the API URL for a single article and add ?populate=*
+      // to include related fields like Bilde
+      const apiUrl = `https://fortunate-bear-715099df12.strapiapp.com/api/Nyhetsartikler/${validId}?populate=*`;
+      // --- EDIT END ---
       const apiKey = "1330d7d0a7e52fbcf4779861a6948373dff5f06b8bbce4cc0d08025276bb45ce3114590200d5b3cb7d0a856325f55c71e170fc2f2e4508102712e4730fbfb075c745056641f618bee2e54bf7ccdb1a56c6c4e89d60ef7c25f728198bde97d7e4cfbb773f63336580c64084350f57ffba8a15e289b1016cbe4df256bc2928bd50"; // Consider using environment variables
 
       if (!apiKey) {
