@@ -143,7 +143,7 @@ export default function Footer({
               />
             </div>
             <p className="text-muted mb-4">
-              Providing quality products and services since 2010. We are committed to customer satisfaction and excellence in everything we do.
+              Tidenes familiearrangement!
             </p>
             <div className="d-flex gap-3 mb-4">
               {socialLinks.facebook && (
@@ -193,7 +193,7 @@ export default function Footer({
                 <li className="mb-2 d-flex align-items-center">
                   <FaEnvelope className="me-2 text-primary" />
                   <a href={`mailto:${contactInfo.email}`} className="text-decoration-none text-muted">
-                    {contactInfo.email}
+                    Kontakt oss
                   </a>
                 </li>
               )}
