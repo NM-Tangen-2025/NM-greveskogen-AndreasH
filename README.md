@@ -14,7 +14,17 @@ pnpm install
 npm install
 ```
 
-First, run the development server:
+Then add this to your .env file:
+
+```bash
+CMS_API_KEY=1330d7d0a7e52fbcf4779861a6948373dff5f06b8bbce4cc0d08025276bb45ce3114590200d5b3cb7d0a856325f55c71e170fc2f2e4508102712e4730fbfb075c745056641f618bee2e54bf7ccdb1a56c6c4e89d60ef7c25f728198bde97d7e4cfbb773f63336580c64084350f57ffba8a15e289b1016cbe4df256bc2928bd50
+CMS_API_URL=https://fortunate-bear-715099df12.strapiapp.com
+STRAPI_MEDIA_URL=https://fortunate-bear-715099df12.media.strapiapp.com
+```
+
+Those env variables are for communicating with the external api's
+
+Then run the development server:
 
 ```bash
 npm run dev
