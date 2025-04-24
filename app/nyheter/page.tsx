@@ -1,5 +1,5 @@
 'use client';
-import NewsCard from '@/src/components/cards/newsCard';
+import NewsCard from '@/src/components/news/newsCard';
 // Import useState and useEffect for state management and side effects
 import { useEffect, useState } from 'react'
 
