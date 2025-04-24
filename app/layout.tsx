@@ -3,12 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from '@/src/components/footer/footer';
 import Navbar from '@/src/components/navbar/Navbar';
-import {
-  FaNewspaper,
-  FaHome,
-  FaInfoCircle,
-  FaShip,
-} from 'react-icons/fa';
+import { FaNewspaper, FaHome, FaInfoCircle, FaShip, FaMap } from 'react-icons/fa';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -36,23 +31,24 @@ export default function RootLayout({
     { name: 'Nyheter', path: '/nyheter', icon: <FaNewspaper /> },
     { name: 'Skip', path: '/skip', icon: <FaShip /> },
     { name: 'Program', path: '/program', icon: <FaInfoCircle /> },
+    { name: 'Kart', path: '/map', icon: <FaMap /> },
   ];
 
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-              <Navbar
-        logo={{
-          src: '/logo.svg',
-          alt: 'Tall Ships Races logo',
-          width: 204,
-          height: 81,
-        }}
-        brandName="Apinor"
-        items={navItems}
-        showCart={true}
-        showBanner={true}
-      />
+        <Navbar
+          logo={{
+            src: '/logo.svg',
+            alt: 'Tall Ships Races logo',
+            width: 204,
+            height: 81,
+          }}
+          brandName="Apinor"
+          items={navItems}
+          showCart={true}
+          showBanner={true}
+        />
         {children}
         <Footer></Footer>
       </body>
