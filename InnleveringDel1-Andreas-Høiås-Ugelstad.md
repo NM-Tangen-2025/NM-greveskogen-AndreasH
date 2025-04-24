@@ -1,22 +1,22 @@
-# Plan for nettside for Tall Ship Races  
+# Plan for nettside for Tall ships races  
 
 ---
 
 ## Mål og målgruppe
 
-Målet med denne kampanjen er å lage en nettside for Tall Ship Races som er et arrangement i Kristiansand, de ønsker at det skal bli økt engasjement og få en nettside som skal være en effektiv informasjonskanal til publikum.
+Målet med denne kampanjen er å lage en nettside for Tall ships races som er et arrangement i Kristiansand, de ønsker at det skal bli økt engasjement og få en nettside som skal være en effektiv informasjonskanal til publikum.
 
 Hovedmålene er som følger:
 
-- Økt engasjement for Tall Ship Races
+- Økt engasjement for Tall ships races
 - Lage en effektiv informasjonskanal for publikum
 
 Basert på oppgaven så kan jeg lage flere kjernefunksjonalitetskrav som jeg ser på som nødvendig for denne nettsiden, disse kravene er:
 
 - Skalerbar og responsiv nettside som fungerer i flere formater
 - Navbar og Footer for effektiv navigasjon mellom de forskjellige sidene
-- Nyhetsarikkel visning som viser siste nytt om Tall Ship Races
-- Eksterne linker til Tall Ship Races sine sosiale medier (Instagram, Facebook, tiktok)
+- Nyhetsartikkel visning som viser siste nytt om Tall ships races
+- Eksterne linker til Tall ships races sine sosiale medier (Instagram, Facebook, tiktok)
 
 Disse målene er mulig å oppnå og vil særlig hjelpe festivalen med å nå ut til ungdom, som er mye på nett. En moderne nettside gjør arrangementet mer attraktivt og tilgjengelig.
 
@@ -41,7 +41,7 @@ Alle sider har en felles **Navbar** for navigasjon og en **Footer** med kontakti
 
 Forsiden (`/`) er landingssiden som viser de tre siste nyhetene, lenker til skip og om, samt en kort introduksjon til festivalen. hentet fra endepunktet `https://fortunate-bear-715099df12.strapiapp.com/api/Nyhetsartikler?populate=*`/`
 
-Forsiden inneholder også generel informasjon om selve Tall Ship Races
+Det vil være lenker til relevante sosiale medier på bunn av siden i Footer - en "nice to have feature" hadde verdt å ha embedded instagram eller facebook, det vil jeg legge til hvis jeg har tid
 
 ---
 
@@ -53,7 +53,7 @@ Forsiden inneholder også generel informasjon om selve Tall Ship Races
 
 ## Skip
 
-`/skip` viser en grid-oversikt over skip hentet fra `https://api.skolenm.tanvgs.no/ships/`. Hvert skip i grid-en vil vise navn og bilde. Bildet hentes via `https://api.skolenm.tanvgs.no/ships/{mmsi}/image`. På mobil (< 576 px) rendres listen vertikalt. Mulighet for å klikke inn på et skip for mer detaljert info fra `/ships/{mmsi}` kan vurderes.
+`/skip` viser en grid-oversikt over skip hentet fra `https://api.skolenm.tanvgs.no/ships/`. Hvert skip i grid-en vil vise navn og bilde. Bildet hentes via `https://api.skolenm.tanvgs.no/ships/{mmsi}/image`. På mobil (< 576 px) rendres listen vertikalt. Mulighet for å klikke inn på et skip for mer detaljert info fra `/ships/{mmsi}` kommer til å bli vurdert - dette legger jeg til på siden hvis jeg ser at jeg har tid til det
 
 *Nice-to-have:* En kartvisning som viser skipenes posisjoner (basert på AIS-data hvis tilgjengelig fra API) kan legges til senere hvis tid tillater det, men er ikke en prioritet for MVP.
 
@@ -61,9 +61,9 @@ Forsiden inneholder også generel informasjon om selve Tall Ship Races
 
 ## programoversikt
 
-`/program` viser arramgementer hentet fra `https://fortunate-bear-715099df12.strapiapp.com/arrangementer`
+`/program` viser arrangementer hentet fra `https://fortunate-bear-715099df12.strapiapp.com/arrangementer`, altså detaljer om arrangementene
 
-Programoversikt kommer til å vise en oversikt over de forskjellige programmene under Tall Ship Races.
+Programoversikt kommer til å vise en oversikt over de forskjellige programmene under Tall ships races.
 
 Denne siden kommer også til å bruke informasjon hentet fra lokasjoner endepunktet på `https://fortunate-bear-715099df12.strapiapp.com/lokasjoner`
 
