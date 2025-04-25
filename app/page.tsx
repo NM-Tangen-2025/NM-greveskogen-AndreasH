@@ -5,7 +5,6 @@ import { useMemo, useState, useEffect } from 'react';
 import type { ais, ship } from '@/src/types/shipdata';
 import TeaserCard from '@/src/components/map/TeaserCard';
 import Link from 'next/link';
-import Image from 'next/image'; // Import the next/image component
 
 export type CombinedShipData = ais & Omit<ship, 'mmsi'>;
 

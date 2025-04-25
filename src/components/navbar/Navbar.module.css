@@ -51,6 +51,6 @@
 @media (max-width: 576px) {
   .logoContainer {
     max-width: 120px;
-    max-height: 48px;
+    max-height: 12px;
   }
 }

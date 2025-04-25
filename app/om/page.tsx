@@ -30,7 +30,7 @@ export default function OmPage() {
       <section className="mb-5">
         <h2 className="mb-3">Cruise-in-Company</h2>
         <p>
-          Som en del av etappe 3, kjent som "Cruise-in-Company", vil en flåte av skip seile i roligere tempo langs den vakre Sørlandskysten. Dette gir mannskap og trainees en unik mulighet til å oppleve kystkulturen. Havner som besøkes under Cruise-in-Company inkluderer:
+          Som en del av etappe 3, kjent som &quot;Cruise-in-Company&quot;, vil en flåte av skip seile i roligere tempo langs den vakre Sørlandskysten. Dette gir mannskap og trainees en unik mulighet til å oppleve kystkulturen. Havner som besøkes under Cruise-in-Company inkluderer:
         </p>
         <ul>
           <li>Sirevåg</li>
